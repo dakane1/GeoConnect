@@ -1,0 +1,45 @@
+// UC Brand Color Scheme
+// Based on https://brand.universityofcalifornia.edu/
+
+$blue-000: #f0f7ff;
+$blue-100: #daebff;
+$blue-200: #72a9ed;
+$blue-300: #2774AE; // UC Blue
+$blue-400: #1e5a8e;
+
+$gold-000: #fffbf0;
+$gold-100: #fff4d6;
+$gold-200: #ffe699;
+$gold-300: #FFB511; // UC Gold
+$gold-400: #cc9000;
+
+$grey-lt-000: #f9f9fa;
+$grey-lt-100: #f3f4f6;
+$grey-lt-200: #e5e7eb;
+$grey-lt-300: #d1d5db;
+
+$grey-dk-000: #9ca3af;
+$grey-dk-100: #6b7280;
+$grey-dk-200: #4b5563;
+$grey-dk-250: #374151;
+$grey-dk-300: #1f2937;
+
+$white: #fff;
+$black: #000;
+
+// Assign colors to variables
+$body-background-color: $white;
+$body-text-color: $grey-dk-300;
+$body-heading-color: $blue-300;
+
+$link-color: $blue-300;
+$btn-primary-color: $blue-300;
+$base-button-color: $grey-lt-200;
+
+$border-color: $grey-lt-300;
+$sidebar-color: $grey-lt-000;
+$code-background-color: $grey-lt-100;
+
+$feedback-color: $gold-300;
+$label-blue: $blue-300;
+$label-gold: $gold-300;

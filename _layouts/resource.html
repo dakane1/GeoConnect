@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="resource-page">
+  <div class="navigation-header">
+    <button onclick="history.back()" class="back-button">← Back</button>
+    <a href="{{ '/' | relative_url }}" class="start-over-link">Start Over</a>
+  </div>
+
+  <div class="resource-banner">
+    <span class="resource-badge">How-To Guide</span>
+  </div>
+
+  <div class="resource-content">
+    {% if page.sub-title %}
+    <p class="resource-subtitle">{{ page.sub-title }}</p>
+    {% endif %}
+    
+    <h1>{{ page.title }}</h1>
+    
+    {% if page.jobs_to_be_done %}
+    <div class="jobs-to-be-done">
+      <h3>This guide helps you:</h3>
+      <ul>
+        {% for job in page.jobs_to_be_done %}
+        <li>{{ job }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if page.steps %}
+    <div class="resource-steps">
+      <h2>Steps:</h2>
+      <ol class="step-list">
+        {% for step in page.steps %}
+        <li>{{ step }}</li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endif %}
+
+    {% if content %}
+    <div class="resource-details">
+      {{ content }}
+    </div>
+    {% endif %}
+  </div>
+
+  {% if page.next-steps %}
+  <div class="next-steps">
+    <h2>What's next?</h2>
+    <div class="cards-grid">
+      {% for step in page.next-steps %}
+        {% if step.type == 'question' %}
+          {% assign target = site.questions | where: "slug", step.ref | first %}
+        {% elsif step.type == 'resource' %}
+          {% assign target = site.resources | where: "slug", step.ref | first %}
+        {% endif %}
+        
+        <div class="card">
+          {% if target %}
+            <a href="{{ target.url | relative_url }}" class="card-link">
+              <div class="card-content">
+                <h3>{{ step.label }}</h3>
+                {% if target.sub-title %}
+                <p class="card-subtitle">{{ target.sub-title }}</p>
+                {% endif %}
+              </div>
+              <div class="card-arrow">→</div>
+            </a>
+          {% else %}
+            <div class="card-link card-disabled">
+              <div class="card-content">
+                <h3>{{ step.label }}</h3>
+                <p class="card-subtitle coming-soon">Coming soon!</p>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>

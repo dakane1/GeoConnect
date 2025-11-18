@@ -1,0 +1,56 @@
+# Site settings
+title: UC GIS Consultation Tool
+description: Interactive decision tree for GIS research consultations
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Theme
+theme: just-the-docs
+
+# Custom CSS
+aux_links_new_tab: false
+
+# This tells Just the Docs to load a custom stylesheet
+custom_css: 
+  - /assets/css/custom.css
+
+# Collections
+collections:
+  questions:
+    output: true
+    permalink: /questions/:name/
+  resources:
+    output: true
+    permalink: /resources/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "questions"
+    values:
+      layout: "question"
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+
+# Just the Docs theme settings
+search_enabled: true
+heading_anchors: true
+
+# Color scheme (using UC brand colors)
+color_scheme: uc
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer content
+footer_content: "University of California GIS Librarians"
+
+# Aux links (optional - for future use)
+aux_links:
+  "UC Library System":
+    - "https://libraries.universityofcalifornia.edu/"
